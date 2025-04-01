@@ -59,6 +59,7 @@ def deleteplan():
 #         messagebox.showinfo("Success", "Command executed successfully and output saved to result.txt")
 #     else:
 #         messagebox.showerror("Error", f"Command failed with error: {result.stderr}")
+
 def generate():
     try:
         subprocess.run(["final.bat"], check=True)
@@ -80,9 +81,10 @@ root.configure(bg="#FFFFF6")
 label = customtkinter.CTkLabel(root, text="JR Presigned Tool", font=("微软雅黑", 22))
 
 
+
 # Create a Textbox for user input
 Textbox = customtkinter.CTkTextbox(
-    root, height=500, font=("微软雅黑", 18), width=500, corner_radius=10
+    root, height=400, font=("微软雅黑", 18), width=500, corner_radius=10
 )
 Textbox.insert("1.0", "S3_KEY_ID=\n ")
 Textbox.insert("2.0", "S3_SECRET=\n")
@@ -137,16 +139,14 @@ for j in range(15):
 # Place a label in the window
 label.grid(column=0, row=0, columnspan=12)
 
-
 # Place a Textbox for user input
-Textbox.grid(column=1, row=1, columnspan=10, rowspan=11, sticky="nsew")
+Textbox.grid(column=1, row=3, columnspan=10, rowspan=11, sticky="nsew")
 
 # Place buttons
 button1.grid(column=1, row=13, columnspan=1, sticky="nsew")
 button2.grid(column=4, row=13, columnspan=1, sticky="nsew")
 button3.grid(column=7, row=13, columnspan=1, sticky="nsew")
 button4.grid(column=10, row=13, columnspan=1, sticky="nsew")
-
 
 # Start the main event loop of the window
 root.mainloop()
